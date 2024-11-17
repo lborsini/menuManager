@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1101</width>
+    <height>841</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Menu Manager</string>
+  </property>
+  <property name="windowOpacity">
+   <double>0.750000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QListWidget {
+    border: 1px solid #2F2F2F;
+    border-radius: 5px;
+	background-color: rgb(249, 249, 249);
+    padding: 5px;
+}
+/* Estilo para la barra de menú */
+QMenuBar {
+    background-color: #2F2F2F; /* gris grafito */
+    color: white;
+}
+
+QMenuBar::item {
+    background-color:  #2F2F2F;;
+    color: white;
+    padding: 5px 10px;
+}
+
+QMenuBar::item:selected {
+    background-color: #444444; /* un gris más claro al pasar el mouse */
+}
+
+QMenuBar::separator {
+    background-color: white; /* separadores blancos */
+    height: 1px;
+}
+
+/* Estilo para el GroupBox */
+QGroupBox {
+    border: 2px solid #2F2F2F; /* borde gris grafito */
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* título centrado */
+    padding: 0 5px;
+    background-color: #2F2F2F; /* fondo del título */
+    color: white;
+}
+
+/* Estilo para los QLabel dentro del GroupBox */
+QGroupBox QLabel {
+    color: #2F2F2F; /* gris grafito */
+    font-size: 14px;
+}
+
+/* Estilo para el ComboBox */
+QComboBox {
+    border: 1px solid #2F2F2F;
+    border-radius: 5px;
+    background-color: rgb(249, 249, 249); /* un toque más claro que el frame */
+    padding: 5px;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox:hover {
+    background-color: #EAE0C8; /* color más claro al pasar el mouse */
+}
+
+/* Estilo para el ListView */
+QListView {
+    border: 1px solid #2F2F2F;
+    background-color: #FAF3E0; /* mismo color que el fondo del frame */
+}
+
+/* Estilo para el DateEdit */
+QDateEdit {
+    border: 1px solid #2F2F2F;
+    border-radius: 5px;
+    background-color: rgb(249, 249, 249); /* similar al fondo del ComboBox */
+    padding: 5px;
+	
+	font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QDateEdit::drop-down {
+    border: none;
+}
+
+QDateEdit:hover {
+    background-color: #EAE0C8; /* color más claro al pasar el mouse */
+}
+
+
+QFrame {
+    background-color: #fdfdfd; /* color blanco viejo */
+	border: 2px black;
+    border-radius: 5px;
+}
+
+/* Estilo para el label principal */
+QLabel#titulo {
+	background-color: transparent;
+    color: black;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Estilo para los labels de usuario y contraseña */
+QLabel {
+	background-color: transparent;
+    color: #003366; /* azul oscuro */
+    font-size: 20px;
+}
+
+/* Estilo para los campos de entrada (QLineEdit) */
+QLineEdit {
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border-bottom: 2px solid #003366; /* borde azul al seleccionar */
+}
+
+/* Estilo para el botón de submit */
+QPushButton {
+    background-color: #003366; /* azul oscuro */
+    color: white;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: #005b99; /* color más claro al pasar el ratón */
+    font-size: 15px; /* agranda un poco las letras */
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1081</width>
+      <height>791</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>501</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Daily Special</string>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Items</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmb_main_special">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>31</y>
+        <width>391</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lst_main_special">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>70</y>
+        <width>391</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="btn_main_submit">
+     <property name="geometry">
+      <rect>
+       <x>950</x>
+       <y>740</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Submit</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>60</y>
+       <width>501</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Grab and Go</string>
+     </property>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Items</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmb_main_vegan">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>31</y>
+        <width>391</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lst_main_vegan">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>70</y>
+        <width>391</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>310</y>
+       <width>501</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Ready to Go</string>
+     </property>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Items</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmb_special_vegetarian">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>31</y>
+        <width>391</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lst_main_vegetarian">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>70</y>
+        <width>391</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmb_main_meat">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>260</y>
+        <width>391</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>309</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Items</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lst_main_meat">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>299</y>
+        <width>391</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>259</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>310</y>
+       <width>501</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Spa Water</string>
+     </property>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Items</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmb_main_water">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>31</y>
+        <width>391</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="lst_main_water">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>70</y>
+        <width>391</width>
+        <height>151</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>871</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Create Menu</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_main_preView">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>740</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pre View</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="dateEdit">
+     <property name="geometry">
+      <rect>
+       <x>920</x>
+       <y>10</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1101</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionNew_Menu"/>
+    <addaction name="separator"/>
+    <addaction name="actionHistory"/>
+   </widget>
+   <widget class="QMenu" name="menuUpload">
+    <property name="title">
+     <string>Upload</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuUpload"/>
+   <addaction name="menuInfo"/>
+  </widget>
+  <action name="actionNew_Menu">
+   <property name="text">
+    <string>New Menu</string>
+   </property>
+  </action>
+  <action name="actionHistory">
+   <property name="text">
+    <string>History</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
